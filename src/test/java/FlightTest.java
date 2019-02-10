@@ -66,9 +66,5 @@ public class FlightTest {
         assertEquals(3, flight.passengerList());
     }
 
-    @Test
-    public void canCheckBaggageWeightUsed() {
-        assertEquals(3, flight.checkHowMuchBaggageWeightUsed(passenger));
-    }
 
 }

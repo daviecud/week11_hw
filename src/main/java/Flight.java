@@ -69,11 +69,7 @@ public class Flight {
         return this.passenger.size();
     }
 
-    public int checkHowMuchBaggageWeightUsed(Passenger passenger) {
-        int passengersBaggage = this.addPassengerToFlight(passenger);
-        int baggage = passengersBaggage * plane.getWeightAvailablePerBag();
-        return baggage;
-    }
+
 
 }
 

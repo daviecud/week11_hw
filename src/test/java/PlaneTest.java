@@ -27,11 +27,11 @@ public class PlaneTest {
 
     @Test
     public void canGetWeightForBags() {
-        assertEquals(10, plane.getWeightAvailableForBaggage());
+        assertEquals(50, plane.getWeightAvailableForBaggage());
     }
 
     @Test
     public void canGetWeightAvailablePerBag() {
-        assertEquals(1, plane.getWeightAvailablePerBag());
+        assertEquals(5, plane.getWeightAvailablePerBag());
     }
 }

@@ -13,13 +13,19 @@ public class FlightManager {
         this.passenger = new ArrayList<Passenger>();
     }
 
-    public int getWeightAvailablePerBag() {
-        return plane.getWeightAvailableForBaggage() / plane.getPlaneCapacity();
+    public int getWeightAvailablePerPassenger() {
+        return plane.getWeightAvailablePerBag();
+    }
+    public int checkHowMuchBaggageWeightUsed(Passenger passenger) {
+        int passengersBaggage = flight.addPassengerToFlight(passenger);
+        int baggage = passengersBaggage * plane.getWeightAvailablePerBag();
+        return baggage;
     }
 
-//    public int getBaggageWeightStillAvailable() {
-//        int baggageSpaceUsed = flight.checkFlightHasRoom() * this.getWeightAvailablePerBag();
-//        int baggageSpaceAvailable = ;
-//    }
+    public int checkHowMuchBaggageWeightLeft(Passenger passenger) {
+        int passengersBaggageLeft = plane.getWeightAvailableForBaggage() - this.checkHowMuchBaggageWeightUsed(passenger);
+        return passengersBaggageLeft;
+
+    }
 
 }

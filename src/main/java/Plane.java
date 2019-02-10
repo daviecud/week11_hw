@@ -21,11 +21,11 @@ public enum Plane {
     }
 
     public int getWeightAvailableForBaggage() {
-        return this.weight / this.capacity;
+        return this.weight / 2;
     }
 
     public int getWeightAvailablePerBag() {
-        return getWeightAvailableForBaggage() / getPlaneCapacity();
+        return getWeightAvailableForBaggage() / this.capacity;
     }
 
 
