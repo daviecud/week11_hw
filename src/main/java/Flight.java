@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Flight {
 
@@ -8,21 +9,15 @@ public class Flight {
     String flightNumber = "BA-444";
     String destAirport = "VAC";
     String depAirport = "GLA";
-    String depTime = "21:00";
+    Date flightTime = new Date();
+
+//    String depTime = "21:00";
 
     public Flight() {
         this.passenger = new ArrayList<Passenger>();
         plane = Plane.BOEING747;
 
     }
-
-
-//    public ArrayList<Passenger> getPassenger() {
-//        return passenger;
-//    }
-
-
-
 
     public String getFlightNumber() {
         return flightNumber;
@@ -37,41 +32,49 @@ public class Flight {
         return depAirport;
     }
 
-    public String getDepTime() {
-        return depTime;
+    public Date getFlightTime(){
+        System.out.println("Your flight departs at: " + flightTime);
+        System.out.println("You better hurray UP!!!!");
+        return flightTime;
+
     }
+//    public String getDepTime() {
+//        return depTime;
+//    }
 
     public int checkFlightHasRoom() {
-
         return plane.getPlaneCapacity() - this.passengerList();
     }
 
-    public Passenger findPassenger(String name) {
-        Passenger foundPassenger = null;
-        for (Passenger passenger : this.passenger) {
-            if (passenger.getPassengersName() == name) {
-                foundPassenger = passenger;
-            }
-        }
-        return foundPassenger;
-    }
+//    public Passenger findPassenger(String name) {
+//        Passenger foundPassenger = null;
+//        for (Passenger passenger : this.passenger) {
+//            if (passenger.getPassengersName() == name) {
+//                foundPassenger = passenger;
+//            }
+//        }
+//        return foundPassenger;
+//    }
 
     public int passengerList() {
-        Passenger passenger = null;
+        Passenger passengerTotal = null;
         return this.passenger.size();
     }
 
-    public void addPassengerToFlight(Passenger passenger) {
+    public int addPassengerToFlight(Passenger passenger) {
         if (this.passengerList() < this.checkFlightHasRoom());
             this.passenger.add(passenger);
+            this.passenger.add(passenger);
+            this.passenger.add(passenger);
+        return this.passenger.size();
     }
 
-//    public void checkPassengerOntoFlight(String name, ArrayList<Passenger> passengers) {
-//        Passenger passenger = findPassenger(name);
-//        if (passenger != null && passenger )
-//    }
-
-
-
+    public int checkHowMuchBaggageWeightUsed(Passenger passenger) {
+        int passengersBaggage = this.addPassengerToFlight(passenger);
+        int baggage = passengersBaggage * plane.getWeightAvailablePerBag();
+        return baggage;
+    }
 
 }
+
+

@@ -1,4 +1,6 @@
-public class Passenger {
+import java.util.ArrayList;
+
+public class Passenger extends ArrayList<Passenger> {
 
     private String name;
     private int bags;
